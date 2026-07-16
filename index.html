@@ -425,46 +425,45 @@
 
         // دالة توليد الرابط
         async function generateRawLink() {
-            const content = rawInput.value.trim();
-            if (!content) {
-                alert('الرجاء كتابة المحتوى أولاً!');
-                return;
-            }
+    const content = rawInput.value.trim();
+    if (!content) {
+        alert('الرجاء كتابة المحتوى أولاً!');
+        return;
+    }
 
-            // تعطيل الزر أثناء التحميل
-            generateBtn.disabled = true;
-            generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإنشاء...';
+    generateBtn.disabled = true;
+    generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإنشاء...';
 
-            try {
-                const response = await fetch(`${API_BASE_URL}/api/save`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ content: content })
-                });
+    try {
+        // استخدم Pastebin API
+        const response = await fetch('https://pastebin.com/api/api_post.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({
+                api_dev_key: '',
+                api_option: 'paste',
+                api_paste_code: content,
+                api_paste_private: '0',
+                api_paste_format: 'lua'
+            })
+        });
 
-                const data = await response.json();
+        const text = await response.text();
+        const pasteId = text.split('/').pop();
+        const rawUrl = `https://pastebin.com/raw/${pasteId}`;
 
-                if (!response.ok) {
-                    throw new Error(data.error || 'حدث خطأ');
-                }
+        currentRawUrl = rawUrl;
+        rawLinkDisplay.textContent = rawUrl;
+        loadstringExample.textContent = `loadstring(game:HttpGet("${rawUrl}"))()`;
+        resultBox.style.display = 'block';
+        resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-                // حفظ الرابط وعرضه
-                currentRawUrl = data.url;
-                rawLinkDisplay.textContent = currentRawUrl;
-                loadstringExample.textContent = `loadstring(game:HttpGet("${currentRawUrl}"))()`;
-
-                // إظهار صندوق النتيجة
-                resultBox.style.display = 'block';
-
-                // تمرير الصفحة إلى النتيجة
-                resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            } catch (error) {
-                alert('خطأ: ' + error.message);
-            } finally {
-                generateBtn.disabled = false;
-                generateBtn.innerHTML = '<i class="fas fa-folder-open"></i> إنشاء رابط Raw';
-            }
+    } catch (error) {
+        alert('خطأ: ' + error.message);
+    } finally {
+        generateBtn.disabled = false;
+        generateBtn.innerHTML = '<i class="fas fa-folder-open"></i> إنشاء رابط Raw';
+    }
         }
 
         // أحداث الأزرار
