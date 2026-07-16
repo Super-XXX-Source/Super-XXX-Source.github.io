@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwagMode · Elevate Your Game</title>
-    <!-- Google Fonts + Font Awesome for Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ===== RESET & BASE (Black & White Serenity) ===== */
+        /* ===== RESET & BASE ===== */
         * {
             margin: 0;
             padding: 0;
@@ -147,7 +146,7 @@
             line-height: 1.7;
         }
 
-        /* ===== BUTTONS (Monochrome minimal) ===== */
+        /* ===== BUTTONS ===== */
         .btn-group {
             display: flex;
             flex-wrap: wrap;
@@ -161,7 +160,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             background: transparent;
             color: #f0f0f0;
-            cursor: default;
+            cursor: pointer;
             transition: all 0.25s ease;
             display: inline-flex;
             align-items: center;
@@ -170,6 +169,7 @@
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(4px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
         }
         .btn-primary {
             background: #ffffff;
@@ -242,7 +242,81 @@
             margin-top: 1rem;
         }
 
-        /* ===== BOTTOM SECTION (Revenge / CTA) ===== */
+        /* ===== RAW BOX (الميزة الجديدة) ===== */
+        .raw-section {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .raw-section .raw-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+        .raw-section .raw-title i {
+            margin-right: 10px;
+            color: #888;
+        }
+
+        .raw-box {
+            width: 100%;
+            min-height: 180px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.5rem;
+            padding: 1.2rem 1.5rem;
+            font-family: 'Inter', monospace;
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.3s ease;
+            backdrop-filter: blur(4px);
+            line-height: 1.7;
+        }
+        .raw-box:focus {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+        .raw-box::placeholder {
+            color: #555;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+        }
+
+        .raw-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-raw {
+            padding: 0.7rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+            color: #f0f0f0;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(4px);
+        }
+        .btn-raw:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: scale(1.02);
+        }
+        .btn-raw i {
+            font-size: 0.9rem;
+        }
+
+        /* ===== REVENGE / BOTTOM CTA ===== */
         .revenge-section {
             display: flex;
             justify-content: space-between;
@@ -290,7 +364,7 @@
             color: #ccc;
             font-weight: 500;
             transition: 0.2s;
-            cursor: default;
+            cursor: pointer;
             font-size: 0.9rem;
             backdrop-filter: blur(4px);
         }
@@ -318,9 +392,10 @@
             .hero-content h1 { font-size: 2.6rem; }
             .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
             .revenge-text { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .raw-box { min-height: 120px; font-size: 0.85rem; }
         }
 
-        /* subtle grain overlay for extra premium feel */
+        /* grain overlay */
         body::before {
             content: '';
             position: fixed;
@@ -350,7 +425,6 @@
 
     <!-- ===== HERO ===== -->
     <div class="hero">
-        <!-- Left -->
         <div class="hero-content">
             <div class="badge">
                 <i class="fas fa-arrow-trend-up"></i> 
@@ -369,7 +443,6 @@
             </div>
         </div>
 
-        <!-- Right (Stats Card) -->
         <div class="hero-stats">
             <div class="stat-number">5M+</div>
             <div class="stat-label">Total Executions</div>
@@ -380,6 +453,18 @@
             <div class="feature-tag">
                 <i class="fas fa-shield-alt" style="margin-right: 4px;"></i> Undetected · Low latency
             </div>
+        </div>
+    </div>
+
+    <!-- ===== RAW SECTION (الميزة الجديدة) ===== -->
+    <div class="raw-section">
+        <div class="raw-title">
+            <i class="fas fa-code"></i> Raw Content Generator
+        </div>
+        <textarea class="raw-box" id="rawInput" placeholder="اكتب أي شيء هنا ... سينشئ لك زر Raw صفحة خام تعرض هذا المحتوى فقط."></textarea>
+        <div class="raw-actions">
+            <button class="btn-raw" id="rawBtn"><i class="fas fa-file-export"></i> Raw</button>
+            <button class="btn-raw" id="clearBtn"><i class="fas fa-eraser"></i> مسح</button>
         </div>
     </div>
 
@@ -403,10 +488,121 @@
 
 </div>
 
-<!-- small footer note (optional) -->
 <div style="margin-top: 2rem; font-size: 0.7rem; color: #333; letter-spacing: 2px; text-transform: uppercase; opacity: 0.4;">
     SwagMode · Elevate your game
 </div>
+
+<script>
+    (function() {
+        const rawInput = document.getElementById('rawInput');
+        const rawBtn   = document.getElementById('rawBtn');
+        const clearBtn = document.getElementById('clearBtn');
+
+        // دالة توليد صفحة Raw
+        function openRawPage(content) {
+            // إذا كان المحتوى فارغاً، نعطي رسالة افتراضية
+            const text = content.trim() || '// لا يوجد محتوى ...';
+
+            // بناء صفحة HTML خام (تعرض النص كما هو)
+            const rawHtml = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw · SwagMode</title>
+    <style>
+        body {
+            background: #0b0b0b;
+            color: #e0e0e0;
+            font-family: 'Inter', 'Courier New', monospace;
+            padding: 2.5rem;
+            margin: 0;
+            line-height: 1.7;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        pre {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 1.5rem;
+            padding: 2rem 2.5rem;
+            max-width: 1000px;
+            width: 100%;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.95rem;
+            color: #d0d0d0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .meta {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.75rem;
+            color: #555;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .meta a {
+            color: #888;
+            text-decoration: none;
+            border-bottom: 1px dotted #333;
+        }
+        .meta a:hover {
+            color: #fff;
+        }
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            pre { padding: 1.2rem; font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <div style="width:100%;">
+        <div class="meta">
+            <span>Raw · SwagMode</span>
+        </div>
+        <pre>${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
+    </div>
+</body>
+</html>`;
+
+            // فتح في نافذة جديدة
+            const win = window.open('', '_blank');
+            if (win) {
+                win.document.write(rawHtml);
+                win.document.close();
+            } else {
+                alert('الرجاء السماح للنوافذ المنبثقة لهذا الموقع.');
+            }
+        }
+
+        // حدث الضغط على زر Raw
+        rawBtn.addEventListener('click', function() {
+            openRawPage(rawInput.value);
+        });
+
+        // حدث الضغط على زر المسح
+        clearBtn.addEventListener('click', function() {
+            rawInput.value = '';
+            rawInput.focus();
+        });
+
+        // اختصار: Ctrl+Enter داخل المربع ينفذ Raw
+        rawInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                openRawPage(rawInput.value);
+            }
+        });
+
+    })();
+</script>
 
 </body>
 </html>
