@@ -3,19 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwagMode · Elevate Your Game</title>
+    <title>SwagMode · Raw Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ===== RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             background-color: #0b0b0b;
             background-image: radial-gradient(circle at 20% 30%, #1a1a1a 0%, #000000 90%);
@@ -27,13 +21,10 @@
             align-items: center;
             justify-content: center;
             padding: 2rem 1.5rem;
-            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* ===== MAIN CONTAINER ===== */
         .site {
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(2px);
@@ -41,21 +32,17 @@
             border-radius: 3.5rem;
             padding: 2.5rem 3rem;
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-            transition: all 0.3s ease;
         }
-
-        /* ===== NAVIGATION ===== */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-bottom: 2.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             flex-wrap: wrap;
             gap: 1rem;
         }
-
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
@@ -65,12 +52,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .logo i {
-            margin-right: 8px;
-            -webkit-text-fill-color: #fff;
-            background: none;
-        }
-
+        .logo i { margin-right: 8px; -webkit-text-fill-color: #fff; background: none; }
         .nav-links {
             display: flex;
             gap: 2.5rem;
@@ -78,14 +60,8 @@
             font-size: 0.95rem;
             color: #9a9a9a;
         }
-        .nav-links span {
-            cursor: default;
-            transition: color 0.2s;
-            letter-spacing: 0.3px;
-        }
-        .nav-links span:hover {
-            color: #ffffff;
-        }
+        .nav-links span { cursor: default; transition: color 0.2s; }
+        .nav-links span:hover { color: #ffffff; }
         .nav-links .highlight {
             color: #ffffff;
             background: rgba(255, 255, 255, 0.06);
@@ -94,26 +70,21 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* ===== HERO SECTION ===== */
+        /* Hero */
         .hero {
             display: grid;
             grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
-
         .hero-content h1 {
-            font-size: 4.2rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.05;
             letter-spacing: -2px;
-            margin-bottom: 0.5rem;
         }
-        .hero-content h1 .light {
-            font-weight: 300;
-            color: #7a7a7a;
-        }
+        .hero-content h1 .light { font-weight: 300; color: #7a7a7a; }
         .hero-content .badge {
             display: inline-flex;
             align-items: center;
@@ -125,80 +96,37 @@
             font-size: 0.9rem;
             font-weight: 600;
             color: #ccc;
-            margin-bottom: 1.8rem;
-            backdrop-filter: blur(10px);
+            margin-bottom: 1.5rem;
         }
-        .hero-content .badge i {
-            color: #fff;
-            font-size: 1rem;
-        }
-        .hero-content .badge strong {
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: #a8a8a8;
-            max-width: 90%;
-            margin: 1.5rem 0 2.2rem;
-            font-weight: 400;
-            line-height: 1.7;
-        }
-
-        /* ===== BUTTONS ===== */
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
+        .hero-content .badge strong { color: #fff; }
+        .hero-content p { font-size: 1.1rem; color: #a8a8a8; margin: 1.5rem 0 2rem; line-height: 1.7; }
+        .btn-group { display: flex; flex-wrap: wrap; gap: 1rem; }
         .btn {
             padding: 0.9rem 2.2rem;
             border-radius: 60px;
             font-weight: 600;
             font-size: 1rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            background: transparent;
+            background: rgba(255, 255, 255, 0.02);
             color: #f0f0f0;
             cursor: pointer;
             transition: all 0.25s ease;
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            letter-spacing: 0.3px;
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(4px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             text-decoration: none;
+            backdrop-filter: blur(4px);
         }
-        .btn-primary {
-            background: #ffffff;
-            color: #0b0b0b;
-            border: 1px solid #ffffff;
-            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.08);
-        }
-        .btn-primary:hover {
-            background: #e6e6e6;
-            transform: scale(1.02);
-            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.15);
-        }
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: #fff;
-            transform: scale(1.02);
-        }
-        .btn i {
-            font-size: 0.9rem;
-        }
+        .btn-primary { background: #ffffff; color: #0b0b0b; border: 1px solid #ffffff; }
+        .btn-primary:hover { background: #e6e6e6; transform: scale(1.02); }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.06); border-color: #fff; transform: scale(1.02); }
 
-        /* ===== RIGHT SIDE (Stats & visual) ===== */
         .hero-stats {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 2.5rem;
             padding: 2.5rem 2rem;
             backdrop-filter: blur(8px);
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
         }
         .stat-number {
             font-size: 4.8rem;
@@ -210,113 +138,146 @@
             background-clip: text;
             line-height: 1;
         }
-        .stat-label {
-            font-size: 1rem;
-            color: #9a9a9a;
-            font-weight: 400;
-            margin-top: 0.3rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .stat-desc {
-            margin-top: 1.8rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-            padding-top: 1.8rem;
-            color: #b5b5b5;
-            font-weight: 300;
-            line-height: 1.7;
-        }
-        .stat-desc i {
-            color: #fff;
-            margin-right: 6px;
-        }
-        .feature-tag {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 40px;
-            padding: 0.2rem 1rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: #aaa;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            margin-top: 1rem;
-        }
+        .stat-label { font-size: 1rem; color: #9a9a9a; text-transform: uppercase; letter-spacing: 2px; margin-top: 0.3rem; }
+        .stat-desc { margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px solid rgba(255, 255, 255, 0.04); color: #b5b5b5; }
 
-        /* ===== RAW BOX (الميزة الجديدة) ===== */
-        .raw-section {
+        /* ===== RAW BUILDER (الميزة الجديدة) ===== */
+        .raw-builder {
             margin-top: 3rem;
             padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .raw-section .raw-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #ddd;
+        .raw-builder .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
         }
-        .raw-section .raw-title i {
-            margin-right: 10px;
-            color: #888;
-        }
-
-        .raw-box {
-            width: 100%;
-            min-height: 180px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 1.5rem;
-            padding: 1.2rem 1.5rem;
-            font-family: 'Inter', monospace;
+        .raw-builder .section-desc {
+            color: #999;
             font-size: 0.95rem;
+            margin-bottom: 1.8rem;
+            line-height: 1.6;
+        }
+        .raw-builder .section-desc code {
+            background: rgba(255,255,255,0.05);
+            padding: 0.2rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #ddd;
+            border: 1px solid #222;
+        }
+
+        .raw-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 800px) {
+            .raw-grid { grid-template-columns: 1fr; }
+            .hero { grid-template-columns: 1fr; }
+        }
+
+        .raw-input-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #aaa;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.5px;
+        }
+        .raw-input-group input, .raw-input-group textarea {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1.2rem;
+            padding: 0.9rem 1.2rem;
+            font-family: 'Inter', monospace;
             color: #e0e0e0;
-            resize: vertical;
+            font-size: 0.95rem;
             outline: none;
-            transition: border-color 0.3s ease;
+            transition: border 0.3s;
             backdrop-filter: blur(4px);
-            line-height: 1.7;
         }
-        .raw-box:focus {
-            border-color: rgba(255, 255, 255, 0.25);
+        .raw-input-group input:focus, .raw-input-group textarea:focus {
+            border-color: rgba(255, 255, 255, 0.2);
         }
-        .raw-box::placeholder {
-            color: #555;
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
+        .raw-input-group textarea {
+            min-height: 180px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+        .raw-input-group input {
+            height: 50px;
         }
 
         .raw-actions {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.2rem;
             flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.2rem;
         }
-
         .btn-raw {
-            padding: 0.7rem 2rem;
+            padding: 0.7rem 1.8rem;
             border-radius: 60px;
             font-weight: 600;
-            font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.04);
-            color: #f0f0f0;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.03);
+            color: #e0e0e0;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: 0.25s;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             backdrop-filter: blur(4px);
         }
         .btn-raw:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             border-color: #fff;
             transform: scale(1.02);
         }
-        .btn-raw i {
+        .btn-raw.success {
+            border-color: #4caf50;
+            color: #8bc34a;
+        }
+        .btn-raw i { font-size: 0.9rem; }
+
+        .result-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 1.2rem;
+            padding: 1.5rem;
+            margin-top: 1.2rem;
+            word-break: break-all;
+        }
+        .result-box .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+        .result-box .link {
+            color: #aaccff;
             font-size: 0.9rem;
+            font-family: 'Inter', monospace;
+        }
+        .result-box .tip {
+            margin-top: 0.8rem;
+            background: rgba(255, 193, 7, 0.05);
+            border-left: 3px solid #ffc107;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #ccc;
+        }
+        .result-box .tip code {
+            background: #1a1a1a;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            color: #ffd54f;
         }
 
-        /* ===== REVENGE / BOTTOM CTA ===== */
         .revenge-section {
             display: flex;
             justify-content: space-between;
@@ -327,75 +288,30 @@
             padding-top: 3rem;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
-        .revenge-text {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .revenge-text i {
-            font-size: 2.2rem;
-            color: #fff;
-            opacity: 0.7;
-        }
-        .revenge-text h3 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-        .revenge-text h3 span {
-            font-weight: 300;
-            color: #8a8a8a;
-        }
-        .revenge-text p {
-            color: #9a9a9a;
-            max-width: 400px;
-            font-size: 0.95rem;
-            margin-top: 0.2rem;
-        }
-        .revenge-actions {
-            display: flex;
-            gap: 1rem;
-        }
+        .revenge-text { display: flex; align-items: center; gap: 1.5rem; }
+        .revenge-text i { font-size: 2.2rem; color: #fff; opacity: 0.7; }
+        .revenge-text h3 { font-size: 1.6rem; font-weight: 600; }
+        .revenge-text h3 span { font-weight: 300; color: #8a8a8a; }
+        .revenge-text p { color: #9a9a9a; max-width: 400px; font-size: 0.95rem; margin-top: 0.2rem; }
+        .revenge-actions { display: flex; gap: 1rem; }
         .btn-ghost {
             padding: 0.7rem 1.8rem;
             border-radius: 60px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: transparent;
             color: #ccc;
-            font-weight: 500;
-            transition: 0.2s;
             cursor: pointer;
+            transition: 0.2s;
             font-size: 0.9rem;
-            backdrop-filter: blur(4px);
         }
-        .btn-ghost i {
-            margin-right: 8px;
-        }
-        .btn-ghost:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: #fff;
-            color: #fff;
-        }
+        .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: #fff; color: #fff; }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 900px) {
-            .site { padding: 1.8rem; }
-            .hero { grid-template-columns: 1fr; gap: 2.5rem; }
-            .hero-content h1 { font-size: 3.2rem; }
-            .stat-number { font-size: 3.8rem; }
-            .revenge-section { flex-direction: column; align-items: flex-start; }
-        }
         @media (max-width: 600px) {
-            body { padding: 1rem; }
-            .site { border-radius: 2rem; padding: 1.5rem; }
-            .nav-links { gap: 1.2rem; font-size: 0.8rem; flex-wrap: wrap; }
+            .site { padding: 1.5rem; border-radius: 2rem; }
             .hero-content h1 { font-size: 2.6rem; }
-            .btn { padding: 0.7rem 1.5rem; font-size: 0.9rem; }
-            .revenge-text { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-            .raw-box { min-height: 120px; font-size: 0.85rem; }
+            .stat-number { font-size: 3.2rem; }
+            .raw-builder .section-title { font-size: 1.2rem; }
         }
-
-        /* grain overlay */
         body::before {
             content: '';
             position: fixed;
@@ -403,7 +319,7 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 9999;
-            opacity: 0.3;
+            opacity: 0.2;
         }
     </style>
 </head>
@@ -411,73 +327,88 @@
 
 <div class="site">
 
-    <!-- ===== NAV ===== -->
+    <!-- NAV -->
     <nav>
-        <div class="logo">
-            <i class="fas fa-bolt"></i> SwagMode
-        </div>
+        <div class="logo"><i class="fas fa-bolt"></i> SwagMode</div>
         <div class="nav-links">
             <span>Features</span>
-            <span class="highlight"><i class="fas fa-key" style="margin-right: 6px;"></i> Get Key</span>
+            <span class="highlight"><i class="fas fa-key"></i> Get Key</span>
             <span>Join us</span>
         </div>
     </nav>
 
-    <!-- ===== HERO ===== -->
+    <!-- HERO -->
     <div class="hero">
         <div class="hero-content">
-            <div class="badge">
-                <i class="fas fa-arrow-trend-up"></i> 
-                <strong>5M+</strong> Executions
-            </div>
-            <h1>
-                The script that <br><span class="light">improves your</span> <br>gaming experience.
-            </h1>
-            <p>
-                Discover all the features of SwagMode — built for precision, 
-                crafted for champions.
-            </p>
+            <div class="badge"><i class="fas fa-arrow-trend-up"></i> <strong>5M+</strong> Executions</div>
+            <h1>The script that <br><span class="light">improves your</span> <br>gaming experience.</h1>
+            <p>Discover all the features of SwagMode — built for precision, crafted for champions.</p>
             <div class="btn-group">
                 <div class="btn btn-primary"><i class="fas fa-download"></i> Get SwagMode</div>
                 <div class="btn btn-outline"><i class="fas fa-key"></i> Get Key</div>
             </div>
         </div>
-
         <div class="hero-stats">
             <div class="stat-number">5M+</div>
             <div class="stat-label">Total Executions</div>
-            <div class="stat-desc">
-                <i class="fas fa-circle" style="font-size: 0.5rem; vertical-align: middle; color: #aaa;"></i> 
-                Trusted by top competitive players worldwide.
+            <div class="stat-desc"><i class="fas fa-circle" style="font-size: 0.5rem; vertical-align: middle; color: #aaa;"></i> Trusted worldwide.</div>
+        </div>
+    </div>
+
+    <!-- ===== RAW BUILDER ===== -->
+    <div class="raw-builder">
+        <div class="section-title"><i class="fas fa-code" style="margin-right: 12px;"></i>رابط خام لـ Loadstring</div>
+        <div class="section-desc">
+            اكتب سكربت (لوا) في المربع، ثم احفظه في مستودعك عبر زر "إنشاء ملف"، وانسخ الرابط الخام لاستخدامه في 
+            <code>loadstring(game:HttpGet("الرابط"))()</code>
+        </div>
+
+        <div class="raw-grid">
+            <!-- العمود الأيسر: الإدخال -->
+            <div>
+                <div class="raw-input-group">
+                    <label for="fileName">📄 اسم الملف (يجب أن ينتهي بـ .lua)</label>
+                    <input type="text" id="fileName" value="myscript.lua" style="direction: ltr;">
+                </div>
+                <div class="raw-input-group" style="margin-top: 1.2rem;">
+                    <label for="codeInput">✏️ محتوى السكربت</label>
+                    <textarea id="codeInput" placeholder="-- اكتب كود Lua الخاص بك هنا ...">print("Hello SwagMode!")</textarea>
+                </div>
+                <div class="raw-actions">
+                    <button class="btn-raw" id="createFileBtn"><i class="fas fa-folder-open"></i> إنشاء ملف في GitHub</button>
+                    <button class="btn-raw" id="copyLinkBtn"><i class="fas fa-copy"></i> نسخ الرابط الخام</button>
+                    <button class="btn-raw" id="previewBtn"><i class="fas fa-eye"></i> معاينة الخام</button>
+                </div>
             </div>
-            <div class="feature-tag">
-                <i class="fas fa-shield-alt" style="margin-right: 4px;"></i> Undetected · Low latency
+
+            <!-- العمود الأيمن: النتيجة -->
+            <div>
+                <div class="result-box" id="resultBox">
+                    <div class="label">🔗 الرابط الخام الخاص بك</div>
+                    <div class="link" id="rawLinkDisplay">https://raw.githubusercontent.com/Super-XXX-Source/Super-XXX-Source.github.io/main/myscript.lua</div>
+                    <div class="tip">
+                        💡 <strong>ملاحظة مهمة:</strong> هذا الرابط يعمل فقط بعد أن تقوم بإنشاء الملف في المستودع. اضغط على 
+                        <code>"إنشاء ملف في GitHub"</code>، والصق الكود هناك، ثم احفظ.
+                    </div>
+                </div>
+                <div style="margin-top: 1rem; background: rgba(0,0,0,0.3); border-radius: 1rem; padding: 1rem; border: 1px solid #1a1a1a;">
+                    <span style="color: #888; font-size: 0.8rem;">📋 مثال للاستخدام في Roblox:</span>
+                    <code style="display: block; margin-top: 0.4rem; color: #b0b0b0; font-size: 0.85rem; word-break: break-all;" id="exampleLoadstring">
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/Super-XXX-Source/Super-XXX-Source.github.io/main/myscript.lua"))()
+                    </code>
+                    <button class="btn-raw" id="copyExampleBtn" style="margin-top: 0.6rem; padding: 0.4rem 1.2rem; font-size: 0.8rem;"><i class="fas fa-copy"></i> نسخ المثال</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- ===== RAW SECTION (الميزة الجديدة) ===== -->
-    <div class="raw-section">
-        <div class="raw-title">
-            <i class="fas fa-code"></i> Raw Content Generator
-        </div>
-        <textarea class="raw-box" id="rawInput" placeholder="اكتب أي شيء هنا ... سينشئ لك زر Raw صفحة خام تعرض هذا المحتوى فقط."></textarea>
-        <div class="raw-actions">
-            <button class="btn-raw" id="rawBtn"><i class="fas fa-file-export"></i> Raw</button>
-            <button class="btn-raw" id="clearBtn"><i class="fas fa-eraser"></i> مسح</button>
-        </div>
-    </div>
-
-    <!-- ===== REVENGE / BOTTOM CTA ===== -->
+    <!-- REVENGE -->
     <div class="revenge-section">
         <div class="revenge-text">
             <i class="fas fa-skull"></i>
             <div>
                 <h3>Need to take <span>revenge</span> on your opponent?</h3>
-                <p>
-                    SwagMode's advanced prediction methods will allow you to easily 
-                    end other players with a variety of methods.
-                </p>
+                <p>SwagMode's advanced prediction methods will allow you to easily end other players.</p>
             </div>
         </div>
         <div class="revenge-actions">
@@ -485,122 +416,80 @@
             <div class="btn-ghost"><i class="fas fa-arrow-right"></i> Join us</div>
         </div>
     </div>
-
-</div>
-
-<div style="margin-top: 2rem; font-size: 0.7rem; color: #333; letter-spacing: 2px; text-transform: uppercase; opacity: 0.4;">
-    SwagMode · Elevate your game
 </div>
 
 <script>
     (function() {
-        const rawInput = document.getElementById('rawInput');
-        const rawBtn   = document.getElementById('rawBtn');
-        const clearBtn = document.getElementById('clearBtn');
+        const userName = 'Super-XXX-Source';
+        const repoName = 'Super-XXX-Source.github.io';
+        const branch = 'main';
 
-        // دالة توليد صفحة Raw
-        function openRawPage(content) {
-            // إذا كان المحتوى فارغاً، نعطي رسالة افتراضية
-            const text = content.trim() || '// لا يوجد محتوى ...';
+        const fileNameInput = document.getElementById('fileName');
+        const codeInput = document.getElementById('codeInput');
+        const rawLinkDisplay = document.getElementById('rawLinkDisplay');
+        const exampleLoadstring = document.getElementById('exampleLoadstring');
 
-            // بناء صفحة HTML خام (تعرض النص كما هو)
-            const rawHtml = `<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raw · SwagMode</title>
-    <style>
-        body {
-            background: #0b0b0b;
-            color: #e0e0e0;
-            font-family: 'Inter', 'Courier New', monospace;
-            padding: 2.5rem;
-            margin: 0;
-            line-height: 1.7;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-        pre {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 1.5rem;
-            padding: 2rem 2.5rem;
-            max-width: 1000px;
-            width: 100%;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-size: 0.95rem;
-            color: #d0d0d0;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
-            margin: 0;
-            box-sizing: border-box;
-        }
-        .meta {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 0.75rem;
-            color: #555;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .meta a {
-            color: #888;
-            text-decoration: none;
-            border-bottom: 1px dotted #333;
-        }
-        .meta a:hover {
-            color: #fff;
-        }
-        @media (max-width: 600px) {
-            body { padding: 1rem; }
-            pre { padding: 1.2rem; font-size: 0.85rem; }
-        }
-    </style>
-</head>
-<body>
-    <div style="width:100%;">
-        <div class="meta">
-            <span>Raw · SwagMode</span>
-        </div>
-        <pre>${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>
-    </div>
-</body>
-</html>`;
-
-            // فتح في نافذة جديدة
-            const win = window.open('', '_blank');
-            if (win) {
-                win.document.write(rawHtml);
-                win.document.close();
-            } else {
-                alert('الرجاء السماح للنوافذ المنبثقة لهذا الموقع.');
-            }
+        // تحديث الرابط المعروض
+        function updateLink() {
+            const filename = fileNameInput.value.trim() || 'script.lua';
+            const rawUrl = `https://raw.githubusercontent.com/${userName}/${repoName}/${branch}/${filename}`;
+            rawLinkDisplay.textContent = rawUrl;
+            exampleLoadstring.textContent = `loadstring(game:HttpGet("${rawUrl}"))()`;
+            return rawUrl;
         }
 
-        // حدث الضغط على زر Raw
-        rawBtn.addEventListener('click', function() {
-            openRawPage(rawInput.value);
+        fileNameInput.addEventListener('input', updateLink);
+        codeInput.addEventListener('input', updateLink); // للتحديث عند الكتابة
+
+        // 1. زر "إنشاء ملف في GitHub"
+        document.getElementById('createFileBtn').addEventListener('click', function() {
+            const filename = fileNameInput.value.trim() || 'script.lua';
+            // رابط لإنشاء ملف جديد في المستودع مباشرة
+            const createUrl = `https://github.com/${userName}/${repoName}/new/${branch}?filename=${encodeURIComponent(filename)}`;
+            window.open(createUrl, '_blank');
         });
 
-        // حدث الضغط على زر المسح
-        clearBtn.addEventListener('click', function() {
-            rawInput.value = '';
-            rawInput.focus();
+        // 2. زر "نسخ الرابط الخام"
+        document.getElementById('copyLinkBtn').addEventListener('click', function() {
+            const rawUrl = updateLink();
+            navigator.clipboard.writeText(rawUrl).then(() => {
+                const btn = this;
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> تم النسخ!';
+                btn.classList.add('success');
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.classList.remove('success');
+                }, 2000);
+            }).catch(() => {
+                alert('الرجاء نسخ الرابط يدوياً: ' + rawUrl);
+            });
         });
 
-        // اختصار: Ctrl+Enter داخل المربع ينفذ Raw
-        rawInput.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-                e.preventDefault();
-                openRawPage(rawInput.value);
-            }
+        // 3. زر "معاينة الخام" (يفتح الرابط في تبويب جديد)
+        document.getElementById('previewBtn').addEventListener('click', function() {
+            const rawUrl = updateLink();
+            window.open(rawUrl, '_blank');
         });
 
+        // 4. زر "نسخ مثال loadstring"
+        document.getElementById('copyExampleBtn').addEventListener('click', function() {
+            const rawUrl = updateLink();
+            const loadStr = `loadstring(game:HttpGet("${rawUrl}"))()`;
+            navigator.clipboard.writeText(loadStr).then(() => {
+                const btn = this;
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> تم!';
+                btn.classList.add('success');
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.classList.remove('success');
+                }, 2000);
+            }).catch(() => alert('انسخ المثال يدوياً'));
+        });
+
+        // التحديث الأولي
+        updateLink();
     })();
 </script>
 
