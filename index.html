@@ -435,23 +435,19 @@
     generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإنشاء...';
 
     try {
-        // استخدم Pastebin API
-        const response = await fetch('https://pastebin.com/api/api_post.php', {
+        // استخدام hastebin API (يدعم CORS)
+        const response = await fetch('https://hastebin.com/documents', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams({
-                api_dev_key: '',
-                api_option: 'paste',
-                api_paste_code: content,
-                api_paste_private: '0',
-                api_paste_format: 'lua'
-            })
+            headers: { 'Content-Type': 'text/plain' },
+            body: content
         });
 
-        const text = await response.text();
-        const pasteId = text.split('/').pop();
-        const rawUrl = `https://pastebin.com/raw/${pasteId}`;
+        const data = await response.json();
+        if (!data.key) {
+            throw new Error('فشل إنشاء الرابط');
+        }
 
+        const rawUrl = `https://hastebin.com/raw/${data.key}`;
         currentRawUrl = rawUrl;
         rawLinkDisplay.textContent = rawUrl;
         loadstringExample.textContent = `loadstring(game:HttpGet("${rawUrl}"))()`;
@@ -459,13 +455,14 @@
         resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
     } catch (error) {
-        alert('خطأ: ' + error.message);
+        alert('خطأ: ' + error.message + '\n\nجرب الطريقة اليدوية: انسخ النص والصقه في hastebin.com واضغط Save، ثم انسخ رابط raw.');
+        // فتح hastebin في نافذة جديدة كحل بديل
+        window.open('https://hastebin.com', '_blank');
     } finally {
         generateBtn.disabled = false;
         generateBtn.innerHTML = '<i class="fas fa-folder-open"></i> إنشاء رابط Raw';
     }
         }
-
         // أحداث الأزرار
         generateBtn.addEventListener('click', generateRawLink);
 
